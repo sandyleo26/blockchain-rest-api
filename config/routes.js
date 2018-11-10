@@ -51,7 +51,7 @@ module.exports.routes = {
   'POST  /api/v1/deliver-contact-form-message':          { action: 'deliver-contact-form-message' },
 
   'GET /block/:id': { action: 'blockchain/get-block' },
-  'POST /block': { action: 'blockchain/post-block' },
+  'POST /block': { action: 'blockchain/post-block', csrf: false, },
 
 
   //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
