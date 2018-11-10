@@ -32,7 +32,13 @@ class Blockchain {
   }
 
   async ready() {
-    return await this.getBlockHeight() !== -1;
+    const curHeight = await this.getBlockHeight();
+    if (curHeight === -1) {
+      return await new Promise((resolve, reject) => {
+        setTimeout(async () => resolve((await this.getBlockHeight) !== -1), 2000);
+      })
+    }
+    return true;
   }
 
   async addGenesisBlock() {
