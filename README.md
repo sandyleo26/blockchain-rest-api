@@ -3,15 +3,44 @@
 a [Sails v1](https://sailsjs.com) application
 
 
-### Links
+### How to Run
+```
+npm install
+node app.js
 
-+ [Get started](https://sailsjs.com/get-started)
-+ [Sails framework documentation](https://sailsjs.com/documentation)
-+ [Version notes / upgrading](https://sailsjs.com/documentation/upgrading)
-+ [Deployment tips](https://sailsjs.com/documentation/concepts/deployment)
-+ [Community support options](https://sailsjs.com/support)
-+ [Professional / enterprise options](https://sailsjs.com/enterprise)
+# get block 0
+curl http://localhost:8000/block/0
 
+# create a new block
+curl -H 'Content-Type: application/json' -d '{"data": 123}' -X POST http://localhost:8000/block
+```
+
+### API Endpoints
+1. `GET /block/:id`
+Get info about block `id`. `id` should be integer between 0 to current block height. Upon success, it'll return something like
+
+```
+{
+"hash":"49cce61ec3e6ae664514d5fa5722d86069cf981318fc303750ce66032d0acff3",
+"height":0,
+"body":"First block in the chain - Genesis block",
+"time":"1530311457",
+"previousBlockHash":""
+}
+```
+
+Otherwise, it'll return error.
+
+2. `POST /block`
+Create block. The content type should be `application/json` and contains `data` field such as `{ data: "some data" }`. Upon success, it'll return
+something like
+```
+{
+  "body": "Testing block with test string data"
+}
+```
+
+Otherwise, it'll return error.
 
 ### Version info
 
