@@ -32,7 +32,7 @@ Get info about block `id`. `id` should be integer between 0 to current block hei
 Otherwise, it'll return error.
 
 2. `POST /block`
-Create block. The content type should be `application/json` and contains `data` field such as `{ data: "some data" }`. Upon success, it'll return
+Create block. The content type should be `application/json` and contains `body` field such as `{ body: "some data" }`. Upon success, it'll return
 something like
 ```
 {
