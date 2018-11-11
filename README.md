@@ -36,7 +36,11 @@ Create block. The content type should be `application/json` and contains `body` 
 something like
 ```
 {
-  "body": "Testing block with test string data"
+  "hash": "ab8f447e71c079687943b47f42f8028640cbde86bfad008af177c91f1d971a1b",
+  "height": 5,
+  "body": "a",
+  "time": "1541970141",
+  "previousBlockHash": "8aad83bafe8dee69a7126eb409ab63225b1b76dffa1e3563f864fb5d6edf4ea7"
 }
 ```
 

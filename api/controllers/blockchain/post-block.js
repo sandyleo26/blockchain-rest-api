@@ -9,7 +9,7 @@ module.exports = async function postBlock(req, res) {
     }
     const newBlock = new Block(req.body.body)
     await myBlockchain.addBlock(newBlock)
-    return res.ok({ body: newBlock.body })
+    return res.json(newBlock)
   }
 
   return res.serverError()
