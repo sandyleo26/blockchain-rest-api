@@ -49,4 +49,6 @@ module.exports.globals = {
 
   sails: true,
 
+  simpleChain: require('../simpleChain'),
+
 };

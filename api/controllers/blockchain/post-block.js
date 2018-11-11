@@ -1,5 +1,5 @@
-const Blockchain = require('./simpleChain').Blockchain
-const Block = require('./simpleChain').Block
+const Blockchain = sails.config.globals.simpleChain.Blockchain;
+const Block = sails.config.globals.simpleChain.Block;
 
 module.exports = async function postBlock(req, res) {
   const myBlockchain = new Blockchain()
